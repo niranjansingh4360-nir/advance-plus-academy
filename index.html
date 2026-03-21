@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Plus Academy - Best Commerce Classes in Nalasopara East</title>
+    <meta name="description" content="Expert commerce coaching for FYJC, SYJC, BCom in Nalasopara East. Concept clarity, top results, trusted by parents.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --primary: #1e40af;
+            --accent: #3b82f6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --text: #2d3748;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background: var(--light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5vw;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5vw;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 900px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 80%;
+                max-width: 320px;
+                background: white;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.4s ease-in-out;
+                box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+                z-index: 999;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links a {
+                font-size: 1.4rem;
+                margin: 1.5rem 0;
+            }
+        }
+
+        /* Hero - adjusted for nav height */
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            padding-top: 80px; /* space for fixed nav */
+            background: linear-gradient(rgba(30, 64, 175, 0.8), rgba(59, 130, 246, 0.7)),
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 { font-size: clamp(2.4rem, 7vw, 4.5rem); }
+        .hero p { font-size: clamp(1.2rem, 4vw, 1.6rem); }
+
+        .cta-btn {
+            display: inline-block;
+            padding: clamp(0.9rem, 3vw, 1.2rem) clamp(1.5rem, 5vw, 2.2rem);
+            margin: 0.8rem;
+            border-radius: 50px;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        .cta-primary { background: white; color: var(--primary); }
+        .cta-primary:hover { background: #f0f4ff; transform: translateY(-4px); }
+        .cta-whatsapp { background: #25D366; color: white; }
+        .cta-whatsapp:hover { background: #20b858; transform: translateY(-4px); }
+
+        section { padding: clamp(4rem, 10vw, 7rem) 0; }
+        h2 {
+            text-align: center;
+            color: var(--primary);
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            width: 6rem;
+            height: 0.4rem;
+            background: var(--accent);
+            position: absolute;
+            bottom: -0.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+
+        /* Stats, Features, Gallery, Reviews */
+        .stats-grid, .features-grid, .gallery-grid, .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1.5rem, 4vw, 3rem);
+        }
+        .gallery-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transition: transform 0.4s;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+        }
+        .gallery-grid img:hover { transform: scale(1.05); }
+
+        .feature-card, .review-card {
+            background: white;
+            padding: clamp(1.8rem, 4vw, 2.5rem);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .feature-card:hover { transform: translateY(-10px); }
+
+        .contact { background: #eff6ff; text-align: center; }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: clamp(15px, 4vw, 25px);
+            right: clamp(15px, 4vw, 25px);
+            background: #25D366;
+            color: white;
+            width: clamp(55px, 12vw, 70px);
+            height: clamp(55px, 12vw, 70px);
+            border-radius: 50%;
+            font-size: clamp(1.8rem, 5vw, 2.2rem);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.15); }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: clamp(2.5rem, 7vw, 4rem) 1rem;
+        }
+
+        /* Scroll padding for fixed nav */
+        html { scroll-padding-top: 80px; }
+
+.stats {
+    background: linear-gradient(1350deg, var(--accent), var(--accent));
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: clamp(1rem, 5vw, 4rem) 0;
+}
+
+.stats h2 {
+    color: white;
+    margin-bottom: 4rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.stat-card {
+    background: rgba(255, 2, 2, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: clamp(2rem, 5vw, 2.8rem);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.stat-card:hover {
+    transform: translateY(-12px) scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.stat-icon {
+    font-size: clamp(2.8rem, 7vw, 4rem);
+    margin-bottom: 1.2rem;
+    background: linear-gradient(135deg, #ffffff33, #ffffff66);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.stat-number {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.stat-card p {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    opacity: 0.95;
+    font-weight: 500;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Advance Plus Academy</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Advance Plus Academy</h1>
+            <p>Premier Commerce Coaching in Nalasopara East<br>Building Strong Foundations for Top Results</p>
+            <div>
+                <a href="tel:+919766775566" class="cta-btn cta-primary"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="https://wa.me/919766775566?text=Hello%20Advance%20Plus%20Academy%2C%20I%20want%20details%20about%20commerce%20batches" class="cta-btn cta-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- Stats -->
+        <section class="stats">
+            <div class="stats-grid">
+                <div class="stat-item"><h3>500+</h3><p>Happy Students</p></div>
+                <div class="stat-item"><h3>95%+</h3><p>Success Rate</p></div>
+                <div class="stat-item"><h3>10+</h3><p>Years Experience</p></div>
+                <div class="stat-item"><h3>100%</h3><p>Concept Clarity</p></div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section id="why-us">
+            <h2>Why Choose Advance Plus Academy</h2>
+            <div class="features-grid">
+                <div class="feature-card"><i class="fas fa-chalkboard-teacher fa-3x"></i><h3>Expert Faculty</h3><p>Experienced commerce specialists</p></div>
+                <div class="feature-card"><i class="fas fa-users fa-3x"></i><h3>Small Batches</h3><p>Personal attention guaranteed</p></div>
+                <div class="feature-card"><i class="fas fa-chart-line fa-3x"></i><h3>Regular Tests</h3><p>Track progress weekly</p></div>
+                <div class="feature-card"><i class="fas fa-book-open fa-3x"></i><h3>Concept Clarity</h3><p>Easy & practical teaching</p></div>
+                <div class="feature-card"><i class="fas fa-wallet fa-3x"></i><h3>Affordable Fees</h3><p>Best value for quality</p></div>
+                <div class="feature-card"><i class="fas fa-clock fa-3x"></i><h3>Flexible Timings</h3><p>Batches for all schedules</p></div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery">
+            <h2>Our Learning Environment</h2>
+            <div class="gallery-grid">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepIKz--XTll2SnwCMnaBmm5Ngarhjg0qzVKoLQ6VXxEUlr_Y8O9wTful3RCLSRaosNlG0ccglOuiATERd0D1BsbyyNgeUhXvGOQegme-hF0j-g0YiYDRVeAwk95rJ5__Y2zQ0KSdw=s680-w680-h510-rw" alt="Classroom">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwerlHGdWLeqwNLqtFYyPVRWyrJTbqe2lRW0PhJVeuVv7YxN7vfUZHapCDG6MVCeYoe37QQ5mJVfJVnYCDKSQSaee1l1oCWiYFRhIwjHR564mXQHc11vXCJKZTJ1XS0-2tnk8UqeF=s680-w680-h510-rw" alt="Students">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwep9FKsbkTebzbNxR8ro8QQYpDXfFl3wPMEXbadTfcJS7ubLxHlOdeK_0chBZS9165fkbAoQ0WJs7_iW3dUOxFpgVJp9XqSgad1f85hL1b2ngWEGe1akd5JGWh9boSggvYzQns0Nsw=s680-w680-h510-rw" alt="Learning Space">
+                <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwerqbM91fKBuPgklpuwSpbAZ_mqnxU58jNsHG9ehAmn6M55JULw51yhTTSsfeQf_kR0Wp14n1uGX6pF9bNKBA2VQ1q-c_Sp1iUqmUT-gsJa8AcPYVdBcYsx0MDk0UWB9p1PXuWfL=s680-w680-h510-rw" alt="Academy">
+            </div>
+        </section>
+
+        <!-- Reviews -->
+        <section id="reviews">
+            <h2>What Parents Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <p>"My daughter scored 94% in Accounts after joining. Excellent teachers and personal attention!"</p>
+                    <div class="review-author">— Mrs. Anjali Mehta</div>
+                </div>
+                <div class="review-card">
+                    <p>"Best place for commerce in Nalasopara. Regular tests really helped my son."</p>
+                    <div class="review-author">— Mr. Vijay Kumar</div>
+                </div>
+                <div class="review-card">
+                    <p>"Affordable, caring & result-oriented. Highly recommended!"</p>
+                    <div class="review-author">— Mrs. Pooja Desai</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <h2>Get in Touch</h2>
+            <p style="font-size: clamp(1.1rem, 3.5vw, 1.4rem); margin-bottom: 2rem;">
+                301 Vimal Paradise, Opp Ramdev Xerox,<br>
+                Tulinj Road, Station Rd, Nalasopara East,<br>
+                Nala Sopara, Maharashtra 401209
+            </p>
+            <a href="tel:+919766775566" class="cta-btn cta-primary"><i class="fas fa-phone-volume"></i> 097667 75566</a>
+            <br><br>
+            <a href="https://wa.me/919766775566?text=Hi%20Advance%20Plus%20Academy" class="cta-btn cta-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+        </section>
+
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/919766775566?text=Hello%20Advance%20Plus%20Academy" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>© 2026 Advance Plus Academy | Best Commerce Classes in Nalasopara East</p>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active')
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close menu when clicking a link (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 900) {
+                    navLinks.classList.remove('active');
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+
+        // Highlight active section in menu (optional enhancement)
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(section => {
+                if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+                    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+                    document.querySelector(`.nav-links a[href="#${section.id}"]`)?.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
